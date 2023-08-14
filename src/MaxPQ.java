@@ -3,10 +3,12 @@ import java.util.List;
 /* 
  * Author: Ryan Smith
  * File: MaxPQ.java
- * Usage and Purpose: Priority queue (Max bin heap) backed by an array. Used to store
- * every ladder we create in WikiRacer.java and sort them based on priority. This makes
- * it so our WikiRacer searches through pages more closely related to the goal, until it 
- * is found.
+ * 
+ * Purpose: Priority queue (Max bin heap) backed by an array. Used to store
+ * every ladder we create in WikiRacer.java and sort them based on priority (common links). 
+ * This makes it so our WikiRacer searches through pages more closely related to the goal.
+ * 
+ * Usage: WikiRacer does the work! Just sit back and relax.
  */
 public class MaxPQ {
 
@@ -30,8 +32,10 @@ public class MaxPQ {
      * to a new one with twice the capacity.
      */
     private void growArray() {
+    	// double array size
         this.maxSize = 2 * maxSize;
 		Ladder[] newArray = new Ladder[maxSize];
+		// copy over elements
 		for (int i = 0; i <= curSize; i++) {
             newArray[i] = array[i];
         }
@@ -93,10 +97,12 @@ public class MaxPQ {
 	 * up
 	 */
 	public void enqueue(List<String> content, int priority) {
+		// make a new ladder with the info weve been given
 		Ladder newGuy = new Ladder(content, priority);
 		if (curSize >= maxSize - 1) {
 			growArray();
 		}
+		// add this ladder to the end and bubble up to retain heap-ness
 		this.curSize += 1;
 		array[curSize] = newGuy;
 		bubbleUp(this.curSize);
@@ -113,7 +119,9 @@ public class MaxPQ {
 			System.out.println("attempting to dequeue empty queue, ret null");
 			return null;
         }
+		// grab frontmost element ( not zero indexed)
 		List<String> retVal = array[1].content;
+		// take last element and bubble down
 		array[1] = array[curSize];
         this.curSize -= 1;
         bubbleDown(1);
@@ -155,14 +163,15 @@ public class MaxPQ {
 	 */
 	public class Ladder {
 
-		public List<String> content;
-		public int priority;
+		public List<String> content; // sequence of pages we have taken so far
+		public int priority; // number of links the last entry in the ladder has in common with end
 
 		public Ladder(List<String> content, int priority) {
             this.content = content;
             this.priority = priority;
         }
 
+		// for testing
 		public String toString() {
 			return content + " (" + priority + ")";
 		}
