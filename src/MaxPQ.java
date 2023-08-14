@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 /* 
@@ -169,62 +168,5 @@ public class MaxPQ {
 		}
 
 	}
-	
-	public static void main(String[] args) {
-        MaxPQ newLadder = new MaxPQ();
-        
-        // System.out.println("toString: " + newLadder.toString());
-        
-        List<String> stringList = new ArrayList<String>();
-        stringList.add("Hi");
-        stringList.add("Hello");
-        stringList.add("Hey");
-        
-        List<String> stringList2 = new ArrayList<String>();
-        stringList2.add("Whats Up");
-        stringList2.add("Goodbye");
-        stringList2.add("Bye");
-        stringList2.add("Bye333");
-        stringList2.add("Bye343rfse");
-        
-        List<String> stringList3 = new ArrayList<String>();
-        stringList3.add("Whats Up");
-        stringList3.add("Goodbye");
-        stringList3.add("Bye");
-        
-        List<String> stringList4 = new ArrayList<String>();
-        stringList4.add("Whats Up");
-        
-        List<String> stringList5 = new ArrayList<String>();
-        stringList5.add("Whats Up");
-        
-        List<String> stringList6 = new ArrayList<String>();
-        stringList6.add("Whats Up");
-        
-        List<String> stringList7 = new ArrayList<String>();
-        stringList7.add("Whats Up");
-        
-        List<String> stringList8 = new ArrayList<String>();
-        stringList8.add("Whats Up");
-
-        newLadder.enqueue(stringList, 4);
-        newLadder.enqueue(stringList2, 12);
-        newLadder.enqueue(stringList3, 6);
-        newLadder.enqueue(stringList4, 26);
-        newLadder.dequeue();
-        newLadder.enqueue(stringList5, 25);
-        newLadder.enqueue(stringList6, 78);
-        newLadder.dequeue();
-        newLadder.enqueue(stringList7, 63);
-        newLadder.enqueue(stringList8, 23);
-        newLadder.dequeue();
-        //newLadder.toString();
-        // 
-        //newLadder.toString();
-        //newLadder.toString();
-        
-        System.out.println("toString: " + newLadder.toString());
-        
-    }
 
 }

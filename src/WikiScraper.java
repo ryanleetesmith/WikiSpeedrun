@@ -16,7 +16,6 @@ import java.util.Set;
 public class WikiScraper {
 			
 	private static HashMap<String, Set<String>> memoizer = new HashMap<String, Set<String>>();
-
 	/*
 	 * This method takes in a string representing a wiki page as a parameter and
 	 * utilizes the other methods in this class to return a set of all links to
@@ -86,6 +85,7 @@ public class WikiScraper {
 			}
 			track++;
 		}
+		// one weird broken page, testing shows it must be removed
 		if (retSet.contains("Flag_of_the_Caribbean_Community")) {
 			retSet.remove("Flag_of_the_Caribbean_Community");
 			System.out.println("Removed!");
