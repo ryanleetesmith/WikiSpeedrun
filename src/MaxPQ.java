@@ -3,8 +3,6 @@ import java.util.List;
 /* 
  * Author: Ryan Smith
  * File: MaxPQ.java
- * Assignment: Programming Assignment 10 - WikiRacer
- * Course: CSC 210 Fall 2020
  * Usage and Purpose: Priority queue (Max bin heap) backed by an array. Used to store
  * every ladder we create in WikiRacer.java and sort them based on priority. This makes
  * it so our WikiRacer searches through pages more closely related to the goal, until it 
