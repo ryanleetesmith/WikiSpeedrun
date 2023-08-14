@@ -7,6 +7,8 @@ import java.util.Set;
 /* 
  * Author: Ryan Smith
  * File: WikiScraper.java
+ * Assignment: Programming Assignment 10 - WikiRacer
+ * Course: CSC 210 Fall 2020
  * Usage and Purpose: Access the html of a given wikipedia page, store this HTML as a string.
  * Search through and gather only the names of valid wikipedia pages, and store these in a
  * HashMap before returning the set of strings. Accessed by WikiRacer.java to efficiently form
@@ -85,10 +87,6 @@ public class WikiScraper {
 				}
 			}
 			track++;
-		}
-		if (retSet.contains("Flag_of_the_Caribbean_Community")) {
-			retSet.remove("Flag_of_the_Caribbean_Community");
-			System.out.println("Removed!");
 		}
 		return retSet;
 	}

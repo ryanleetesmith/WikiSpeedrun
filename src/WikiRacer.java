@@ -6,6 +6,8 @@ import java.util.Set;
 /* 
  * Author: Ryan Smith
  * File: WikiRacer.java
+ * Assignment: Programming Assignment 10 - WikiRacer
+ * Course: CSC 210 Fall 2020
  * Usage and Purpose: Forms a "ladder" or pathway from one wikipedia page to another by
  * utilizing WikiScraper.java methods to retrieve all of the links on a given wiki page's HTML,
  * then determining which link has the closest similarity to our end goal. This page is then
@@ -48,7 +50,7 @@ public class WikiRacer {
 				curLadder.add(end);
 				return curLadder;
 			}
-			// parallelization
+			// memoization
 			linksHere.parallelStream().forEach(link -> {
 				WikiScraper.findWikiLinks(link);
 				});
