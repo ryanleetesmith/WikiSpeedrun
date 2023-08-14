@@ -87,6 +87,11 @@ public class WikiScraper {
 			}
 			track++;
 		}
+		// one weird broken page, testing shows it must be removed
+		if (retSet.contains("Flag_of_the_Caribbean_Community")) {
+			retSet.remove("Flag_of_the_Caribbean_Community");
+			System.out.println("Removed!");
+		}
 		return retSet;
 	}
 	
